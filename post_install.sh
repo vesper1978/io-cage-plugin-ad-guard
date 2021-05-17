@@ -20,7 +20,9 @@ chown -R adguard:adguard /var/run/adguard/
 mv /home/adguard/AdGuardHome.yaml /home/adguard/.config/adguard/AdGuardHome/
 chown -R adguard:adguard /home/adguard/
 
+# Force AdGuard to build its database
+/home/adguard/.config/adguard/AdGuardHome/AdGuardHome && killall -HUP AdGuardHome
+
 # Start Ad Guard
 service adguard start
 
-echo "Please open the URL on port 3000 to complete installation" > /root/PLUGIN_INFO
