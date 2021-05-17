@@ -16,6 +16,10 @@ mkdir /var/run/adguard
 touch /var/run/adguard/pid
 chown -R adguard:adguard /var/run/adguard/
 
+# Move config
+mv /home/adguard/AdGuardHome.yaml /home/adguard/.config/adguard/AdGuardHome/
+chown -R adguard:adguard /home/adguard/
+
 # Start Ad Guard
 service adguard start
 
