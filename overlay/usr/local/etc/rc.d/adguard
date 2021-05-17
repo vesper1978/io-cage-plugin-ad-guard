@@ -6,7 +6,7 @@ name="adguardhome"
 rcvar="adguardhome_enable"
 adguardhome_user="adguard"
 adguardhome_command="/home/adguard/.config/AdGuardHome/AdGuardHome"
-pidfile="/var/run/${name}/pid"
+pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -r -f ${adguardhome_command}"
 
