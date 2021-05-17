@@ -18,3 +18,5 @@ chown -R adguard:adguard /var/run/adguard/
 
 # Start Ad Guard
 service adguard start
+
+echo "Please open the URL on port 3000 to complete installation" > /root/PLUGIN_INFO
