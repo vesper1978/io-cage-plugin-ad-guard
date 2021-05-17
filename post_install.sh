@@ -14,6 +14,10 @@ tar zxvf AdGuardHome_freebsd_amd64.tar.gz
 sysrc -f /etc/rc.conf adguardhome_enable="YES"
 sysrc -f /etc/rc.conf adguardhome_user="adguard"
 
+# Create pid folder
+mkdir /var/run/adguard
+chown -R adguard:adguard /var/run/adguard/
+
 # Start Ad Guard
 service adguard start
 
