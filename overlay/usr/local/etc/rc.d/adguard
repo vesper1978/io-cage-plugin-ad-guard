@@ -2,7 +2,7 @@
 
 . /etc/rc.subr
 
-name="adguardhome"
+name="adguard"
 rcvar="adguardhome_enable"
 adguardhome_user="adguard"
 adguardhome_command="/home/adguard/.config/AdGuardHome/AdGuardHome"
