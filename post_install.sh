@@ -19,5 +19,5 @@ mkdir /var/run/adguard
 chown -R adguard:adguard /var/run/adguard/
 
 # Start Ad Guard
-service adguard start
+#service adguard start
 
