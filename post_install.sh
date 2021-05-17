@@ -21,7 +21,7 @@ mv /home/adguard/AdGuardHome.yaml /home/adguard/.config/adguard/AdGuardHome/
 chown -R adguard:adguard /home/adguard/
 
 # Force AdGuard to build its database
-/home/adguard/.config/adguard/AdGuardHome/AdGuardHome && killall -HUP AdGuardHome
+/home/adguard/.config/adguard/AdGuardHome/AdGuardHome & sleep 15 & killall AdGuardHome
 
 # Start Ad Guard
 service adguard start
