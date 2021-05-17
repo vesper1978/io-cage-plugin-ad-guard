@@ -12,7 +12,7 @@ tar zxvf AdGuardHome_freebsd_amd64.tar.gz
 
 # Configure the services
 sysrc -f /etc/rc.conf adguardhome_enable="YES"
-sysrc -f /etc/rc.conf adguardhome_enable="adguard"
+sysrc -f /etc/rc.conf adguardhome_user="adguard"
 
 # Start Ad Guard
 service adguard start
