@@ -16,8 +16,5 @@ mkdir /var/run/adguard
 touch /var/run/adguard/pid
 chown -R adguard:adguard /var/run/adguard/
 
-sleep 5
-echo slept!
 # Start Ad Guard
 service adguard start
-echo did it work?
