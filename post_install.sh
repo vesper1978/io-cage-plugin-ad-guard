@@ -18,7 +18,7 @@ touch /var/run/adguard/pid
 @ Chown a bunch of things
 chown -R adguard:adguard /var/run/adguard/
 chown -R adguard:adguard /home/adguard/
-chown root.wheel /home/adguard/.config/adguard/AdGuardHome/AdGuardHome.yaml
+chown root:wheel /home/adguard/.config/adguard/AdGuardHome/AdGuardHome.yaml
 
 
 # Start Ad Guard
