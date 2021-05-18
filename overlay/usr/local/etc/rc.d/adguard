@@ -1,16 +1,25 @@
 #!/bin/sh
 
+# PROVIDE: adguardhome
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable adguardhome:
+# adguardhome_enable : set to "YES" to enable the daemon, default is "NO"
+
 . /etc/rc.subr
 
-name="adguard"
-rcvar="adguardhome_enable"
-adguardhome_user="adguard"
-adguardhome_command="/home/adguard/.config/AdGuardHome/AdGuardHome"
-pidfile="/var/run/${name}/pid"
-command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${adguardhome_command}"
+name=adguardhome
+rcvar=adguardhome_enable
 
 load_rc_config $name
-: ${adguardhome_enable:=no}
+
+adguardhome_enable=${adguardhome_enable:-"NO"}
+
+logfile="/var/log/${name}.log"
+
+procname=/usr/local/bin/adguardhome
+command="/usr/sbin/daemon"
+command_args="-u root -o ${logfile} -t ${name} /usr/local/bin/adguardhome"
 
 run_rc_command "$1"
