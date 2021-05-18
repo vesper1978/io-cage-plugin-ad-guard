@@ -3,8 +3,8 @@
 # Prepare the system
 
 pw useradd -n adguard -m -c "Ad Guard Home user" -s /usr/sbin/nologin -w no
-mkdir -p /home/adguard/.config/adguard
-chown -R adguard:adguard /home/adguard/
+#mkdir -p /home/adguard/.config/adguard
+#chown -R adguard:adguard /home/adguard/
 
 cd /home/adguard/.config/adguard && fetch https://static.adguard.com/adguardhome/release/AdGuardHome_freebsd_amd64.tar.gz && gunzip AdGuardHome_freebsd_amd64.tar.gz && tar xf AdGuardHome_freebsd_amd64.tar && rm AdGuardHome_freebsd_amd64.tar
 # Configure the services
@@ -17,11 +17,8 @@ touch /var/run/adguard/pid
 chown -R adguard:adguard /var/run/adguard/
 
 # Move config
-mv /home/adguard/AdGuardHome.yaml /home/adguard/.config/adguard/AdGuardHome/
 chown -R adguard:adguard /home/adguard/
 
-# Force AdGuard to build its database
-/home/adguard/.config/adguard/AdGuardHome/AdGuardHome & sleep 15 & killall AdGuardHome
 
 # Start Ad Guard
 service adguard start
