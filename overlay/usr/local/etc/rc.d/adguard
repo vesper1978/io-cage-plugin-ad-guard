@@ -18,8 +18,8 @@ adguardhome_enable=${adguardhome_enable:-"NO"}
 
 logfile="/var/log/${name}.log"
 
-procname=/usr/local/bin/adguardhome
+procname=/home/adguard/.config/adguard/AdGuardHome/AdGuardHome
 command="/usr/sbin/daemon"
-command_args="-u root -o ${logfile} -t ${name} /usr/local/bin/adguardhome"
+command_args="-u root -o ${logfile} -t ${name} /home/adguard/.config/adguard/AdGuardHome/AdGuardHome"
 
 run_rc_command "$1"
