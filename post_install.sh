@@ -14,10 +14,11 @@ sysrc -f /etc/rc.conf adguardhome_user="adguard"
 # Create pid folder
 mkdir /var/run/adguard
 touch /var/run/adguard/pid
-chown -R adguard:adguard /var/run/adguard/
 
-# Move config
+@ Chown a bunch of things
+chown -R adguard:adguard /var/run/adguard/
 chown -R adguard:adguard /home/adguard/
+chown root.wheel /home/adguard/.config/adguard/AdGuardHome/AdGuardHome.yaml
 
 
 # Start Ad Guard
