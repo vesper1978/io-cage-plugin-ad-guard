@@ -20,6 +20,7 @@ chown -R adguard:adguard /var/run/adguard/
 chown -R adguard:adguard /home/adguard/
 chown root:wheel /home/adguard/.config/adguard/AdGuardHome/AdGuardHome.yaml
 
+/home/adguard/.config/adguard/AdGuardHome/AdGuardHome -s install
 
 # Start Ad Guard
 service adguard start
